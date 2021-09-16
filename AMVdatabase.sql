@@ -6,13 +6,13 @@ Create table if not exists Bruker
     Fornavn         varchar(255),
     Etternavn       varchar(255),
     Telefonnummer   varchar(255),
-    E-post          varchar(255) UNIQUE,
+    Epost          varchar(255) UNIQUE,
     Passord         varchar(255),
-    CONSTRAINT PRIMARY KEY (Ansatt_ID)
+    CONSTRAINT PRIMARY KEY (Ansatt_nummer)
 
 );
 
-INSERT INTO Bruker (Fornavn, Etternavn, Email, Telefonnummer, Passord)
+INSERT INTO Bruker (Fornavn, Etternavn, Epost, Telefonnummer, Passord)
 values (
     'Tobias',
     'Vetrhus',
@@ -20,9 +20,23 @@ values (
     '416 76 205',
     '12345');
 
-Create table if not exists Verktøy
+Create table if not exists Verktoy
 (
-    Verktøy_nummer  integer(20) UNIQUE,
+    Verktoy_nummer  integer(20) UNIQUE,
     Navn            varchar(255),
     Beskrivelse     varchar(255),
+    Antall_ledig    integer(10),
+    Pris            varchar(255),
+    Spes_krav       boolean,
+    CONSTRAINT PRIMARY KEY (Verktoy_nummer)
 );
+
+INSERT INTO Verktoy (Verktoy_nummer, Navn, Beskrivelse, Antall_ledig, Pris, Spes_krav)
+values (
+        '0001',
+        'Drill',
+        'God tilstand',
+        '1',
+        'Gratis 1 dag, deretter 50kr pr. dag',
+        '0'
+       );
