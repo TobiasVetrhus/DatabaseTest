@@ -2,11 +2,11 @@ Create database if not exists AMV;
 use AMV;
 Create table if not exists Bruker
 (
-    Ansatt_ID       integer UNIQUE auto_increment,
+    Ansatt_nummer   integer UNIQUE auto_increment,
     Fornavn         varchar(255),
     Etternavn       varchar(255),
-    Email           varchar(255) UNIQUE,
     Telefonnummer   varchar(255),
+    E-post          varchar(255) UNIQUE,
     Passord         varchar(255),
     CONSTRAINT PRIMARY KEY (Ansatt_ID)
 
@@ -22,5 +22,7 @@ values (
 
 Create table if not exists Verktøy
 (
-
+    Verktøy_nummer  integer(20) UNIQUE,
+    Navn            varchar(255),
+    Beskrivelse     varchar(255),
 );
